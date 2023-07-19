@@ -1,0 +1,47 @@
+<h1>  Rutas: <small> Provincial e Interprovincial</small></h1>
+<select #Tipo name="cbtipo" id="tipo" (change)="filterRoutesByType(Tipo.value)">
+  <option value="seleccionar">Seleccione</option>
+  <option value="todo">Todo</option>
+  <option value="interno">Interno</option>
+  <option value="externo">Externo</option>
+</select>
+<div *ngFor="let ruta of filteredRoutes">
+ 
+</div>
+<div class="container">
+  <!-- Inicio de columna general: Muestra todos los héroes -->
+  <div class="column">
+    <div class="col animated fadeIn fast" *ngFor="let ruta of rutas; let i = index">  
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ruta.tipo}}</h5>
+              <p class="card-text">Desde {{ruta.ciudadOrigen}} hasta {{ruta.ciudadDestino}}</p>
+                <p class="card-text"><small class="text-body-secondary">{{ruta.descripcion}}</small></p>
+                <p class="card-text"><small class="text-body-secondary">{{ruta.precioRuta}}</small></p>
+              <button (click)="verRutas(i)" class="btn btn-secondary">Ver</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <!--Fin columna-->
+  </div>
+  <!-- Inicio columna para resultados de búsqueda: -->
+<div class="column">
+  <h2>Resultados de Búsqueda</h2>
+  <br>
+  <div *ngFor="let ruta of rutasEncontradas">    
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+      <div class="card-header">{{ruta.descripcion}}</div>
+      <div class="card-body">
+        <br>
+        <h5 class="card-title"><i>Desde {{ruta.ciudadOrigen}} hasta {{ruta.ciudadDestino}}</i></h5>
+        <p class="card-text">{{ruta.precioRuta}} , de tipo: {{ruta.tipo}} </p>
+      </div>
+    </div>
+  </div>  
+</div>
+</div>
+ 

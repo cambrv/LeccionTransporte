@@ -1,0 +1,31 @@
+h1{
+    margin: 1%;
+  }
+.container {
+    width: 100%;
+    overflow: hidden; 
+}
+
+.column {
+    width: 50%;
+    float: left;
+}
+  
+select{
+    border-radius: 10px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 2%;
+  }
+  select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }

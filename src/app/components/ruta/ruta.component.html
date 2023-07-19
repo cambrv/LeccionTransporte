@@ -1,0 +1,11 @@
+<br>
+<h1> Desde <small> {{ruta.ciudadOrigen}} </small> hasta <small>{{ruta.ciudadDestino}}</small></h1>
+<hr>
+<div class="row">
+    <div>
+        <h3>{{ruta.descripcion}}</h3>
+        <p>
+            {{ruta.precioRuta}}
+        </p>
+        <a href="rutas" [routerLink]="['rutas']" class="btn btn-outline-danger btn-block" (click)="redirigir()"> Volver</a>
+    </div> 
